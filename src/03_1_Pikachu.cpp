@@ -27,8 +27,8 @@ public:
 
     void draw(sf::RenderWindow &window)
     {
-        window.draw(this->sprite);
         window.draw(this->shape);
+        window.draw(this->sprite);
     }
 
     void update(){
