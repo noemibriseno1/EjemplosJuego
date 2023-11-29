@@ -13,4 +13,5 @@ https://packages.msys2.org/package/mingw-w64-x86_64-sfml
 > pacman -S mingw-w64-x86_64-sfml
 
 ### Chipmunk - Fisica
-
+https://packages.msys2.org/package/mingw-w64-x86_64-chipmunk?repo=mingw64
+> pacman -S mingw-w64-x86_64-chipmunk

@@ -20,6 +20,8 @@ private:
     sf::RectangleShape shape;
 };
 
+double velocidad = 0.1;
+
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "DinoChrome");
 
@@ -34,16 +36,16 @@ int main() {
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            character.move(-1, 0);
+            character.move(velocidad * -1, 0);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            character.move(1, 0);
+            character.move(velocidad, 0);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            character.move(0, -1);
+            character.move(0, velocidad * -1);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-            character.move(0, 1);
+            character.move(0, velocidad);
         }
 
         window.clear();
