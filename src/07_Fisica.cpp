@@ -4,6 +4,8 @@
 
 int main()
 {
+    int force = 10;
+
     // Crear una ventana de SFML
     sf::RenderWindow window(sf::VideoMode(800, 600), "Ejemplo de Física con Chipmunk y SFML");
 
@@ -44,14 +46,14 @@ int main()
 
         // Controlar la bola con el teclado
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-            cpBodyApplyImpulseAtWorldPoint(ballBody, cpv(-100, 0), cpvzero);
+            cpBodyApplyImpulseAtWorldPoint(ballBody, cpv(- force, 0), cpvzero);
             // cpBodyApplyImpulse(ballBody, cpv(-100, 0), cpvzero);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(100, 0), cpvzero);
+            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(force, 0), cpvzero);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(0, -100), cpvzero);
+            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(0, - force), cpvzero);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(0, 100), cpvzero);
+            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(0, force), cpvzero);
 
         // Actualizar el espacio de Chipmunk
         // Ajustar el valor de 1.0 / 60.0 para cambiar la velocidad de la simulación fisica
