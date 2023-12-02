@@ -1,85 +1,103 @@
-
 #include <SFML/Graphics.hpp>
-#include <chipmunk/chipmunk.h>
+#include <Box2D/Box2D.h>
+#include <iostream>
+using namespace std;
 
 int main()
 {
-    int force = 10;
+    int fuerza = 1;
 
     // Crear una ventana de SFML
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Ejemplo de Física con Chipmunk y SFML");
+    sf::RenderWindow ventana(sf::VideoMode(800, 600), "Ejemplo de Fisica con Box2D y SFML");
 
-    // Crear un espacio de Chipmunk
-    cpSpace* space = cpSpaceNew();
-    cpSpaceSetGravity(space, cpv(0, 1000)); // Establecer la gravedad
-
-    // Crear un cuerpo estático en el espacio
-    cpBody* staticBody = cpSpaceGetStaticBody(space);
+    // Crear un mundo de Box2D
+    b2Vec2 vectorGravedad(0.0f, 10.0f);
+    b2World mundo(vectorGravedad);
 
     // Crear un suelo estático
-    cpShape* ground = cpSegmentShapeNew(staticBody, cpv(0, 500), cpv(800, 500), 0);
-    cpShapeSetFriction(ground, 1.0);
-    cpSpaceAddShape(space, ground);
+    b2BodyDef cuerpoSueloDef;
+    cuerpoSueloDef.position.Set(400, 500.0f); // Posición del centro del cuerpo
+    b2Body* cuerpoSuelo = mundo.CreateBody(&cuerpoSueloDef);
+
+    // Crear una forma rectangular
+    b2PolygonShape formaSuelo;
+    int boxWidth = 600; // 600 pixeles de ancho
+    int boxHeight = 10; // 10 pixeles de alto
+    formaSuelo.SetAsBox(boxWidth / 2.0f, boxHeight / 2.0f);
+
+    // Agregar la forma al cuerpo
+    b2FixtureDef fixtureSueloDef;
+    fixtureSueloDef.shape = &formaSuelo;
+    fixtureSueloDef.friction = 1.0f;
+    cuerpoSuelo->CreateFixture(&fixtureSueloDef);
 
     // Crear un cuerpo dinámico
-    cpFloat radius = 25.0;
-    cpFloat mass = 1.0;
-    cpFloat moment = cpMomentForCircle(mass, 0, radius, cpvzero);
-    cpBody* ballBody = cpSpaceAddBody(space, cpBodyNew(mass, moment));
-    cpBodySetPosition(ballBody, cpv(400, 300));
+    b2BodyDef cuerpoBolaDef;
+    cuerpoBolaDef.type = b2_dynamicBody;
+    cuerpoBolaDef.position.Set(400.0f, 300.0f);
+    b2Body* cuerpoBola = mundo.CreateBody(&cuerpoBolaDef);
 
-    // Crear una forma circular para el cuerpo
-    cpShape* ballShape = cpCircleShapeNew(ballBody, radius, cpvzero);
-    cpShapeSetFriction(ballShape, 0.7);
-    cpSpaceAddShape(space, ballShape);
+    // Crear una forma circular
+    b2CircleShape formaBola;
+    formaBola.m_radius = 25.0f;
+
+    // Agregar la forma al cuerpo
+    b2FixtureDef fixtureBolaDef;
+    fixtureBolaDef.shape = &formaBola;
+    fixtureBolaDef.density = 0.01f;
+    fixtureBolaDef.friction = 0.7f;
+    cuerpoBola->CreateFixture(&fixtureBolaDef);
 
     // Bucle principal del juego
-    while (window.isOpen())
+    while (ventana.isOpen())
     {
         // Procesar eventos
-        sf::Event event;
-        while (window.pollEvent(event))
+        sf::Event evento;
+        while (ventana.pollEvent(evento))
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            if (evento.type == sf::Event::Closed)
+                ventana.close();
         }
 
         // Controlar la bola con el teclado
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-            cpBodyApplyImpulseAtWorldPoint(ballBody, cpv(- force, 0), cpvzero);
-            // cpBodyApplyImpulse(ballBody, cpv(-100, 0), cpvzero);
+            cuerpoBola->ApplyLinearImpulse(b2Vec2(-fuerza, 0), cuerpoBola->GetWorldCenter(), true);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(force, 0), cpvzero);
+            cuerpoBola->ApplyLinearImpulse(b2Vec2(fuerza, 0), cuerpoBola->GetWorldCenter(), true);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(0, - force), cpvzero);
+            cuerpoBola->ApplyLinearImpulse(b2Vec2(0, -fuerza), cuerpoBola->GetWorldCenter(), true);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-            cpBodyApplyImpulseAtLocalPoint(ballBody, cpv(0, force), cpvzero);
+            cuerpoBola->ApplyLinearImpulse(b2Vec2(0, fuerza), cuerpoBola->GetWorldCenter(), true);
 
-        // Actualizar el espacio de Chipmunk
-        // Ajustar el valor de 1.0 / 60.0 para cambiar la velocidad de la simulación fisica
-        cpSpaceStep(space, 1.0 / 60.0);
+        // Actualizar el mundo de Box2D
+        // Ajustar el valor de 1.0 / 60.0 para cambiar la velocidad de la simulación física
+        mundo.Step(1.0f / 60.0f, 6, 2);
+        cout << "Posicion de la bola: " << cuerpoBola->GetPosition().x << ", " << cuerpoBola->GetPosition().y << endl;
 
         // Limpiar la ventana
-        window.clear();
+        ventana.clear();
 
         // Dibujar el suelo
-        sf::RectangleShape groundShape(sf::Vector2f(800, 10));
-        groundShape.setPosition(0, 490);
-        window.draw(groundShape);
+        sf::RectangleShape suelo(sf::Vector2f(boxWidth, boxHeight));
+        suelo.setOrigin(boxWidth / 2.0f, boxHeight / 2.0f); // El origen x,y está en el centro de la forma
+        suelo.setPosition(
+            cuerpoSuelo->GetPosition().x, 
+            cuerpoSuelo->GetPosition().y);
+        ventana.draw(suelo);
 
         // Dibujar la bola
-        sf::CircleShape ballShape(radius);
-        ballShape.setPosition(cpBodyGetPosition(ballBody).x - radius, cpBodyGetPosition(ballBody).y - radius);
-        window.draw(ballShape);
+        sf::CircleShape bola(formaBola.m_radius);
+        bola.setOrigin(formaBola.m_radius, formaBola.m_radius);
+        bola.setFillColor(sf::Color::Red);
+        bola.setPosition(
+            cuerpoBola->GetPosition().x, 
+            cuerpoBola->GetPosition().y);
+        ventana.draw(bola);
 
         // Mostrar la ventana
-        window.display();
+        ventana.display();
     }
-
-    // Liberar la memoria
-    cpShapeFree(ground);
-    cpShapeFree(ballShape);
-    cpSpaceFree(space);
 
     return 0;
 }
+

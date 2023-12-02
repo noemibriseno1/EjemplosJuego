@@ -2,7 +2,7 @@
 SRC_DIR := src
 BIN_DIR := bin
 
-SFML := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lchipmunk
+SFML := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lbox2d
 
 # Obtener todos los archivos .cpp en el directorio de origen
 CPP_FILES := $(wildcard $(SRC_DIR)/*.cpp)
