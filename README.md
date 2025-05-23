@@ -7,7 +7,11 @@ y como editor se esta utilizando Visual Studio Code.
 
 [Instalar las herramientas necesarias](./docs/herramientas.md)
 
+[Instalar las Extensiones VSCode](./docs/extensiones.md)
+
 [Instalar las librerias](./docs/librerias.md)
+
+[Clonar el repositorio](./docs/librerias.md)
 
 ## Como ejecutar los ejemplos
 
@@ -18,10 +22,3 @@ Instalar todas las dependencias descritas abajo y dentro de una terminal de vsco
 Por ejemplo para ejecutar '00_Ventana.cpp' correr el comando en la terminal de vscode:
 
 > make run00_Ventana
-
-## Complementos necesarios VSCode
-
-- Material Icon
-- C/C++
-- PlantUML
-- GitGraph
