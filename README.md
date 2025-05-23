@@ -12,13 +12,14 @@ Descargar e instalar vscode en el siguiente [Enlace.](https://code.visualstudio.
 
 Instalar Msys2 usando el siguiente [Enlace.](https://github.com/msys2/msys2-installer/releases/download/2025-02-21/msys2-x86_64-20250221.exe)
 
-No modificar ningua opcion al momento de intalacion o podrian variar las configuraciones.
+Instalar sin modificar ningua opcion solo dar click en siguiente hasta finalizar o podrian variar las configuraciones.
 
-Una vez instalado es necesario agregar los siguientes directorios al path de windows y reiniciar.
-
+Agregar los siguientes registros y darle en aceptar hasta cerrar todos los dialogos:
 > C:\msys64\mingw64\bin
 
 > C:\msys64\usr\bin
+
+[(Tutorial) ¿Cómo agregar las variables de entorno?](docs/msys2.md)
 
 ### Github Desktop
 Cliente de escritorio para clonar el repositorio, descargar usando el siguiente [enlace](https://desktop.github.com/).
