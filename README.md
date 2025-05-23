@@ -1,27 +1,16 @@
 # EjemplosJuego
 
 El proyecto esta desarrollado sobre MinGW64 utilizando Msys2
-y como editor se esta utilizando Visual Studio Code
+y como editor se esta utilizando Visual Studio Code.
 
-## Como ejecutar los ejemplos
-
-Instalar todas las dependencias descritas abajo y dentro de una terminal de vscode ejecutar:
-
-> make run'NombreEjecutable'
-
-Por ejemplo para ejecutar '00_Ventana.cpp' correr el comando en la terminal de vscode:
-
-> make run00_Ventana
-
-
-## Programas necesarios
+## Prerequisitos
 
 ### Visual estudio code
 Descargar e instalar vscode en el siguiente [Enlace.](https://code.visualstudio.com/)
 
 ### MSYS2 (Windows)
 
-Instalar Msys2 usando el siguiente [Enlace.](https://github.com/msys2/msys2-installer/releases/download/2023-05-26/msys2-x86_64-20230526.exe)
+Instalar Msys2 usando el siguiente [Enlace.](https://github.com/msys2/msys2-installer/releases/download/2025-02-21/msys2-x86_64-20250221.exe)
 
 No modificar ningua opcion al momento de intalacion o podrian variar las configuraciones.
 
@@ -56,6 +45,20 @@ https://packages.msys2.org/package/mingw-w64-x86_64-sfml
 https://box2d.org/documentation/
 https://packages.msys2.org/package/mingw-w64-x86_64-box2d?repo=mingw64
 pacman -S mingw-w64-x86_64-box2d
+
+
+## Como ejecutar los ejemplos
+
+Instalar todas las dependencias descritas abajo y dentro de una terminal de vscode ejecutar:
+
+> make run'NombreEjecutable'
+
+Por ejemplo para ejecutar '00_Ventana.cpp' correr el comando en la terminal de vscode:
+
+> make run00_Ventana
+
+
+
 
 ## Complementos necesarios VSCode
 
