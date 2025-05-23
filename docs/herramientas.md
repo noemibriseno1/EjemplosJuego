@@ -23,3 +23,11 @@ Cliente de escritorio para clonar el repositorio, descargar usando el siguiente 
 
 ### Git
 Para poder realizar commits de vscode es necesario tener instalado Git, descargarlo del siguiente [enlace](https://git-scm.com/).
+
+<img src="images/git.png" alt="alt text" width="40%"/>
+
+Seleccionar **Click here to download**
+<img src="images/git-1.png" alt="alt text"/>
+
+Instalar con las configuraciones por defecto, (Siguiente, siguiente, etc)
+
