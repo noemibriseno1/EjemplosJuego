@@ -6,6 +6,8 @@ Asegurarse que sea **MSYS2 MINGW64**
 <br />
 <img src="images/msys2.png" alt="alt text" width="30%" />
 
+**Nota:** si por alguna razon alguno de los comandos falla, solamente repetir y se instalaran las librerias restantes.
+
 ### 1.- DevTools
 Compiladores y herramientas necesarias para el desarrollo.
 

@@ -19,9 +19,6 @@ Por ejemplo para ejecutar '00_Ventana.cpp' correr el comando en la terminal de v
 
 > make run00_Ventana
 
-
-
-
 ## Complementos necesarios VSCode
 
 - Material Icon
