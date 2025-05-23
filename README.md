@@ -14,11 +14,13 @@ Instalar Msys2 usando el siguiente [Enlace.](https://github.com/msys2/msys2-inst
 
 Instalar sin modificar ningua opcion solo dar click en siguiente hasta finalizar o podrian variar las configuraciones.
 
-Agregar los siguientes registros y darle en aceptar hasta cerrar todos los dialogos:
+Agregar los siguientes directorios al path, darle en aceptar hasta cerrar todos los dialogos y reiniciar la maquina.
+
 > C:\msys64\mingw64\bin
 
 > C:\msys64\usr\bin
 
+En caso de que no sepas como agregar los directorios al path sigue el siguiente tutorial
 [(Tutorial) ¿Cómo agregar las variables de entorno?](docs/msys2.md)
 
 ### Github Desktop

@@ -1,7 +1,5 @@
 # Variables de entorno
-
-Una vez instalado es necesario agregar los siguientes directorios al path de windows y reiniciar.
-
+Abrir el menu de inicio y buscar **Variables de entorno del sistema**
 <br/>
 <img src="./images/variables.png" alt="Variables de entorno" width="50%" />
 
