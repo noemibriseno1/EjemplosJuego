@@ -1,3 +1,7 @@
+- Como crear un repositorio
+- Como activar autosave
+- Select default profile
+- Solicitar developer pack
 - Agregar explicacion de que es el path
 - Explicar como colaborar en repositorio
 - Como hacer los diagramas de clases
