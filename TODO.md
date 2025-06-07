@@ -1,23 +1,16 @@
-- Como crear un repositorio
+- Agregar explicacion de que es el path
 - Como activar autosave
 - Select default profile
-- Solicitar developer pack
-- Agregar explicacion de que es el path
+- Como crear un repositorio
 - Explicar como colaborar en repositorio
-- Como hacer los diagramas de clases
+- Solicitar developer pack
 - Instalar Java para plant uml
-
+- Como hacer los diagramas de clases
 - Agregar curso para aprender a moverle al codigo
 - Agregar enlaces a ejemplos de proyectos pasados(Videos)
 
-- Donde conseguir recursos gratis
-- Que tipos de licencias existen
-- Como formar un buen Readme
-
 - Como formatear el codigo
 - Guia de estilo de codigo
-
 - Patrones de diseño
-- Biblioteca estandar
-- Estructura de el proyecto
-- Como hacer commits semanticos
+
+
