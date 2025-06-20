@@ -36,7 +36,7 @@ y como editor se esta utilizando Visual Studio Code.
 
 1. Clona el repositorio:
    ```bash
-   git clone [enlace en línea](https://github.com/tuusuario/juego-del-carro-loco.git)
+   git clone [enlace en línea](https://github.com/noemibriseno1/EjemplosJuego.git)
    cd juego-del-carro-loco
    
 
