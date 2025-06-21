@@ -1,0 +1,79 @@
+@startuml DiagramaClasesCarroLoco
+
+
+class Juego {
+  
+  
+  +iniciar()
+  +actualizar()
+  +dibujar()
+  +reiniciar()
+  -cargarMusica()
+  -detenerMusica()
+  -manejarEventos()
+}
+
+class CarroUno {
+  
+  +mover()
+  +reiniciar()
+  +dibujar()
+  -esquivarObstaculos()
+  -ganarPuntaje()
+
+}
+
+class Obstaculo {
+  +mover()
+  +reiniciar()
+  +dibujar()
+  +colisionar()
+  -detenerCarroUno()
+  -aumentarVelocidad()
+  -reducirPuntaje()
+}
+  
+  
+
+class Fondo {
+  +mover()
+  +dibujar()
+  +reiniciar()
+  -actualizarPosicion()
+  -cargarImagen()
+  -guiarCarroUno()
+  -guiarObstaculos()
+  
+}
+
+class Puntaje {
+  +incrementar()
+  +mostrar()
+  +reiniciar()
+  +actualizar()
+  -calcularPuntaje()
+  -guardarPuntaje()
+  -mostrarPuntajeActual()
+  
+}
+
+
+Juego "1" *-- "1" CarroUno          
+Juego "1" *-- "2..*" Obstaculo    
+Juego "1" *-- "1" Fondo            
+Juego "1" *-- "*" Puntaje
+Juego "1" o-- "1" CarroUno
+
+CarroUno "1" *-- "*" Puntaje
+CarroUno "1" o-- "*" Puntaje
+
+
+
+Fondo "1" *-- "*" CarroUno
+Fondo "1" *-- "*" Obstaculo
+
+
+
+
+
+@enduml
