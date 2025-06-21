@@ -35,9 +35,9 @@ y como editor se esta utilizando Visual Studio Code.
 ## Instalación
 
 1. Clona el repositorio:
-   ```bash
-   git clone [enlace en línea](https://github.com/noemibriseno1/EjemplosJuego.git)
-   cd juego-del-carro-loco
+   
+   [enlace en línea](https://github.com/noemibriseno1/EjemplosJuego.git)
+   
    
 
 ## Como ejecutar los ejemplos
@@ -58,15 +58,6 @@ Por ejemplo para ejecutar '09_Proyecto.cpp' correr el comando en la terminal de 
 
 *Espacio: Iniciar/reiniciar juego
 
-## Estructura de Archivos
-
-juego-esquivar-carros/
-├── assets/
-│   ├── fonts/          # Fuentes del juego
-│   ├── images/         # Sprites y fondos
-│   └── music/          # Música y efectos de sonido
-├── main.cpp            # Código fuente principal
-└── README.md           # Este archivo
 
 ## Assets Necesarios
 
@@ -80,9 +71,9 @@ Para que el juego funcione correctamente, necesitas los siguientes archivos en s
 
 ![Texto alternativo](assets/images/carro3.png  "Segundo tipo de carro obstáculo")
 
-![Texto alternativo](assets/music/dark_horse_2.ogg  "Música de fondo")
+(assets/music/dark_horse_2.ogg  "Música de fondo")
 
-![Texto alternativo](assets/fonts/FirstTimeWriting.ttf  "Fuente para el texto del juego")
+(assets/fonts/FirstTimeWriting.ttf  "Fuente para el texto del juego")
 
 ## Lógica del Juego
 
