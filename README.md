@@ -9,12 +9,12 @@ y como editor se esta utilizando Visual Studio Code.
 
 ## Características
 
-- Control de un carro que se mueve horizontalmente
-- Dos tipos de carros obstáculos con diferentes velocidades
-- Sistema de puntuación que aumenta con el tiempo
-- Música de fondo para mayor inmersión
-- Gráficos 2D con scroll infinito del fondo
-- Pantallas de inicio y game over
+* Control de un carro que se mueve horizontalmente
+* Dos tipos de carros obstáculos con diferentes velocidades
+* Sistema de puntuación que aumenta con el tiempo
+* Música de fondo para mayor inmersión
+* Gráficos 2D con scroll infinito del fondo
+* Pantallas de inicio y game over
 
 ## Prerequisitos
 
@@ -28,9 +28,9 @@ y como editor se esta utilizando Visual Studio Code.
 
 ## Requisitos del Sistema
 
-- SFML 2.5 o superior
-- Compilador C++ compatible (GCC, Clang, MSVC)
-- Sistema operativo Windows, Linux o macOS
+* SFML 2.5 o superior
+* Compilador C++ compatible (GCC, Clang, MSVC)
+* Sistema operativo Windows, Linux o macOS
 
 ## Instalación
 
@@ -71,21 +71,22 @@ Para que el juego funcione correctamente, necesitas los siguientes archivos en s
 
 ![Texto alternativo](assets/images/carro3.png  "Segundo tipo de carro obstáculo")
 
-(assets/music/dark_horse_2.ogg  "Música de fondo")
+[enlace en línea](https://opengameart.org/content/dark-horse)
 
-(assets/fonts/FirstTimeWriting.ttf  "Fuente para el texto del juego")
+[enlace en línea](https://opengameart.org/content/first-time-writing-font)
+
 
 ## Lógica del Juego
 
--El jugador controla un carro que solo puede moverse horizontalmente
+*El jugador controla un carro que solo puede moverse horizontalmente
 
--Dos tipos de carros obstáculos aparecen desde arriba con velocidades aleatorias
+*Dos tipos de carros obstáculos aparecen desde arriba con velocidades aleatorias
 
--Cada obstáculo evitado suma 2 puntos al marcador
+*Cada obstáculo evitado suma 2 puntos al marcador
 
--La velocidad de los obstáculos aumenta gradualmente
+*La velocidad de los obstáculos aumenta gradualmente
 
--Colisionar con un obstáculo termina el juego
+*Colisionar con un obstáculo termina el juego
 
 ## Personalización
 
